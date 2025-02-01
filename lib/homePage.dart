@@ -71,67 +71,71 @@ class HomePage extends StatelessWidget {
                   ]))),
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
           child: Column(children: [
             //1
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Color(0xffE9E9EB)),
-                    height: 50,
+            Container(
+              margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
+              child: Row(
+                children: [
+                  Expanded(
                     child: Container(
-                      margin: EdgeInsets.all(10),
-                      child: const Row(
-                        children: [
-                          Icon(
-                            Icons.search,
-                            color: Color(0xff9E9EA0),
-                          ),
-                          SizedBox(width: 5),
-                          Expanded(
-                            child: Text(
-                              "Search product",
-                              style: TextStyle(
-                                  color: Color(0xff9E9EA0), fontSize: 15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Color(0xffE9E9EB)),
+                      height: 50,
+                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Icons.search,
+                              color: Color(0xff9E9EA0),
                             ),
-                          ),
-                        ],
+                            SizedBox(width: 5),
+                            Expanded(
+                              child: Text(
+                                "Search product",
+                                style: TextStyle(
+                                    color: Color(0xff9E9EA0), fontSize: 15),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(10),
-                  width: 50,
-                  height: 50,
-                  decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: Color(0xffE9E9EB)),
-                  child: const Icon(
-                    Icons.shopping_cart_checkout_rounded,
-                    color: Color(0xff9A9FA3),
-                  ),
-                ),
-                Badge(
-                  label: const Text("3"),
-                  child: Container(
+                  Container(
+                    margin: const EdgeInsets.all(10),
                     width: 50,
                     height: 50,
                     decoration: const BoxDecoration(
-                        shape: BoxShape.circle, color: const Color(0xffE9E9EB)),
+                        shape: BoxShape.circle, color: Color(0xffE9E9EB)),
                     child: const Icon(
-                      Icons.notifications_none_outlined,
+                      Icons.shopping_cart_checkout_rounded,
                       color: Color(0xff9A9FA3),
                     ),
                   ),
-                ),
-              ],
+                  Badge(
+                    label: const Text("3"),
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: const Color(0xffE9E9EB)),
+                      child: const Icon(
+                        Icons.notifications_none_outlined,
+                        color: Color(0xff9A9FA3),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 5),
             //2
             Container(
+              margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
               width: double.infinity,
               height: 90,
               padding: EdgeInsets.only(top: 25, left: 30),
@@ -164,10 +168,11 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
 
             //4
             Container(
+              margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
               height: 110,
               child: ListView.builder(
                   itemCount: item.length,
@@ -200,37 +205,42 @@ class HomePage extends StatelessWidget {
                   }),
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: 5),
 
             //5
             Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Special for you",
-                      style: TextStyle(
-                          fontSize: 19,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff4D4C4C)),
-                    ),
-                    Text(
-                      "See More",
-                      style: TextStyle(fontSize: 15, color: Color(0xffB8B8B8)),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 18),
                 Container(
+                  margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Special for you",
+                        style: TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff4D4C4C)),
+                      ),
+                      Text(
+                        "See More",
+                        style:
+                            TextStyle(fontSize: 15, color: Color(0xffB8B8B8)),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 5),
+                Container(
+                  margin: const EdgeInsets.only(top: 10, left: 10),
                   height: 100,
                   child: ListView.builder(
                       itemCount: special.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (ctx, i) {
                         return Padding(
-                          padding: EdgeInsets.only(right: 9),
+                          padding: EdgeInsets.only(right: 14),
                           child: Container(
                             padding: EdgeInsets.only(top: 20, left: 10),
                             width: 250,
@@ -265,44 +275,49 @@ class HomePage extends StatelessWidget {
                         );
                       }),
                 ),
-                SizedBox(height: 25),
+                SizedBox(height: 10),
                 //6
                 Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Popular Product",
-                          style: TextStyle(
-                              fontSize: 19,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff4D4C4C)),
-                        ),
-                        Text(
-                          "See More",
-                          style:
-                              TextStyle(fontSize: 15, color: Color(0xffB8B8B8)),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 10),
                     Container(
+                      margin:
+                          const EdgeInsets.only(top: 10, left: 10, right: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Popular Product",
+                            style: TextStyle(
+                                fontSize: 19,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff4D4C4C)),
+                          ),
+                          Text(
+                            "See More",
+                            style: TextStyle(
+                                fontSize: 15, color: Color(0xffB8B8B8)),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Container(
+                      margin: const EdgeInsets.only(top: 5, left: 10),
                       height: 200,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: product.length,
                           itemBuilder: (ctx, i) {
                             return Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(5.0),
                               child: Card(
                                 color: Color(0xffEDEEF2),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Container(
-                                      width: 120,
+                                      width: 130,
                                       height: 140,
                                       decoration: BoxDecoration(
                                           borderRadius:
