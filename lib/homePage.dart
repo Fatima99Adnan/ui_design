@@ -372,3 +372,4 @@ class HomePage extends StatelessWidget {
     return Popularproduct(name: name, price: price, image: image);
   }
 }
+//end
